@@ -1,0 +1,145 @@
+/* Fullständig CSS för FakeStore-demo med semantisk layout */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: #f2f4f8;
+  color: #222;
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+header {
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 12px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+  margin: 0;
+  color: #378c1a;
+}
+
+p {
+  color: #555;
+}
+
+.layout {
+  display: flex;
+  gap: 20px;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 220px;
+  background: #fafbff;
+  border: 1px solid #d9e1ef;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.categories h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #378c1a;
+}
+
+.categories ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-decoration: underline;
+  text-decoration-color: #b3b3b3;
+}
+
+.categories li {
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.categories li:hover {
+  background: #eef6ff;
+}
+
+/* HUVUDINNEHÅLL */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* PRODUKTGRID */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.product {
+  background: #fff;
+  border: 1px solid #e0e6ef;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.product:hover {
+  background: #f9fbff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.product h2 {
+  font-size: 0.95rem;
+  margin: 0 0 4px;
+}
+
+.product p {
+  margin: 0;
+  font-weight: 500;
+  color: #333;
+}
+
+/* PRODUKTDETALJER */
+.detail {
+  background: #fff;
+  border: 1px solid #dfe4ec;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.detail img {
+  max-width: 200px;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.detail h2 {
+  margin-top: 0;
+}
+
+@media (max-width: 800px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+}

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="sv">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Produkter — Demo med FakeStore API</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+    <div class="app">
+        <header>
+            <h1>FakeStore Demo</h1>
+            <p>Click on a category or product to get more details.</p>
+        </header>
+
+        <div class="layout">
+            <aside class="sidebar">
+                <section class="categories">
+                    <!-- Kategorier fylls här, exempel på HTML-struktur -->
+                    <h2>Categories</h2>
+                    <ul id="categoryList">
+                        <li>Herrkläder</li>
+                        <li>Damkläder</li>
+                        <li>Smycken</li>
+                        <li>Elektronik</li>
+                    </ul>
+                </section>
+            </aside>
+
+            <main class="content">
+                <section class="products" id="productList">
+                    <!-- Produktgrid, exempel på HTML-struktur -->
+                    <article class="product">
+                        <h2>Fjällräven Foldsack No. 1 Backpack</h2>
+                        <p>Herrkläder</p>
+                        <p>$109.95</p>
+                    </article>
+
+                    <article class="product">
+                        <h2>Mens Casual Premium Slim Fit T-Shirts</h2>
+                        <p>Herrkläder</p>
+                        <p>$22.30</p>
+                    </article>
+
+                    <article class="product">
+                        <h2>White Gold Plated Princess</h2>
+                        <p>Smycken</p>
+                        <p>$55.99</p>
+                    </article>
+                </section>
+
+                <section class="detail" id="productDetail" hidden>
+                    <!-- Detaljvy för vald produkt, exempel på HTML-struktur -->
+                    <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png"
+                        alt="Fjällräven Foldsack No. 1 Backpack">
+                    <h2>Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</h2>
+                    <p><strong>Kategori:</strong> men's clothing</p>
+                    <p><strong>Pris:</strong> $109.95</p>
+                    <p><strong>Beskrivning:</strong> Your perfect pack for everyday use and walks in the forest...</p>
+                </section>
+            </main>
+        </div>
+
+    </div>
+</body>
+
+</html>
