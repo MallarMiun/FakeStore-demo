@@ -40,9 +40,9 @@ p {
 
 /* SIDEBAR */
 .sidebar {
-  width: 220px;
-  background: #fafbff;
-  border: 1px solid #d9e1ef;
+  min-width: 200px;
+  background: #fff;
+  border: 1px solid #e0e6ef;
   border-radius: 8px;
   padding: 12px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -140,6 +140,5 @@ p {
   }
 
   .sidebar {
-    width: 100%;
   }
 }
