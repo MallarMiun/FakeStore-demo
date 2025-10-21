@@ -3,14 +3,22 @@
 window.onload = init;
 
 function init() {
-    fetchProducts();
+    fetchProducts("https://fakestoreapi.com/products");
+    fetchCategories();
 }
 
 /* hämta in produkter från Fake store API */
-function fetchProducts() {
-    fetch("https://fakestoreapi.com/products")
+function fetchProducts(url) {
+    fetch(url)
         .then(res => res.json())
         .then(data => writeProducts(data))
+        .catch(error => console.log("Det blev ett fel! Felmeddelande: " + error))
+}
+
+function fetchCategories() {
+        fetch("https://fakestoreapi.com/products/categories")
+        .then(res => res.json())
+        .then(data => writeCategories(data))
         .catch(error => console.log("Det blev ett fel! Felmeddelande: " + error))
 }
 
@@ -45,6 +53,27 @@ function writeProducts(products) {
         articleEl.addEventListener("click", function() {
             fetchProductDetail(product.id);
         })
+    });
+}
+
+/* Skriv ut kategorierna till sidebar */
+function writeCategories(categories) {
+    console.log(categories);
+    const categoryListEl = document.getElementById("categoryList");
+    categoryListEl.innerHTML = "";
+
+    categories.forEach(category => {
+        const liEl = document.createElement("li");
+
+        liEl.innerHTML += `${category}`;
+
+        categoryListEl.appendChild(liEl);
+
+        
+        liEl.addEventListener("click", function() {
+            fetchProducts("https://fakestoreapi.com/products/category/" + category);
+        })
+            
     });
 }
 
